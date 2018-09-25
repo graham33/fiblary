@@ -37,7 +37,7 @@ def import_versioned_module(module, version, submodule=None):
 
 
 def quote_if_string(value):
-    if type(value) in [str, unicode]:
+    if type(value) in [str, str]:
         return "'{0}'".format(value)
     else:
         return value

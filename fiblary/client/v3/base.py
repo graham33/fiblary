@@ -22,7 +22,7 @@
 
 import fiblary.external.jsonpath as jsonpath
 
-from itertools import imap, ifilterfalse
+from itertools import filterfalse
 import logging
 import six
 
@@ -158,7 +158,7 @@ class ReadOnlyController(MinimalController):
 
         # in case there is only one item
         items = items if isinstance(items, list) else [items]
-        return ifilterfalse(lambda i: i is None, imap(self.model, items))
+        return filterfalse(lambda i: i is None, map(self.model, items))
 
     def find(self, **kwargs):
         """Find single item with attributes matching ``**kwargs``.
@@ -196,7 +196,7 @@ class CommonController(ReadOnlyController):
 
     def create(self, **kwargs):
         item = self.model(kwargs)
-        for (key, value) in kwargs.items():
+        for (key, value) in list(kwargs.items()):
             setattr(item, key, value)
         try:
             response = self.http_client.post(self.RESOURCE, data=item)

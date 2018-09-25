@@ -189,7 +189,7 @@ class Client(object):
         timestamp = state.get('timestamp', 0)
         for change in state.get('changes', []):
             device_id = change.pop('id')
-            for property_name, value in change.items():
+            for property_name, value in list(change.items()):
                 data = {
                     'timestamp': timestamp,
                     'id': device_id,

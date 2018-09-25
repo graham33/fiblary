@@ -24,7 +24,7 @@ import threading
 from fiblary.common import exceptions
 
 try:
-    import Queue as queue
+    import queue as queue
 except Exception:
     import queue
 

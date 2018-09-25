@@ -24,7 +24,7 @@ from fiblary.common import exceptions
 try:
     from urllib.parse import urlencode
 except ImportError:
-    from urllib import urlencode
+    from urllib.parse import urlencode
 
 
 USER_AGENT = 'RAPI'

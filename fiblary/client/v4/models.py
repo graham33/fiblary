@@ -64,7 +64,7 @@ class RecursiveList(list):
                 self.append(data)
                 self.__setitem__(index, data)
         else:
-            raise TypeError, 'Expected list'
+            raise TypeError('Expected list')
 
         self.__dict__['__original__'] = value
 
@@ -73,7 +73,7 @@ class RecursiveList(list):
 
     def __setitem__(self, key, value):
         if isinstance(value, str):
-            value = unicode(value)
+            value = str(value)
         if isinstance(value, list) and not isinstance(value, RecursiveList):
             value = RecursiveList(value)
 
@@ -94,7 +94,7 @@ class RecursiveDict(dict):
             for key in value:
                 self.__setitem__(key, value[key])
         else:
-            raise TypeError, 'Expected dict'
+            raise TypeError('Expected dict')
         self.__dict__['__original__'] = value
 
     def changes(self):
@@ -103,7 +103,7 @@ class RecursiveDict(dict):
 
     def __setitem__(self, key, value):
         if isinstance(value, str):
-            value = unicode(value)
+            value = str(value)
         if isinstance(value, dict) and not isinstance(value, RecursiveDict):
             value = RecursiveDict(value)
 
