@@ -43,7 +43,7 @@ with open('README.rst') as f:
     readme = f.read()
 
 setup(
-    name='fiblary',
+    name='fiblary3',
     version=fiblary.__version__,
     description='Home Center 2 API Python Library',
     long_description=readme,

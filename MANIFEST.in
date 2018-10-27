@@ -2,6 +2,8 @@ include AUTHORS
 include ChangeLog
 include LICENSE
 include README.rst
+include requirements.txt
+include test-requirements.txt
 
 recursive-include doc *
 recursive-include tests *
