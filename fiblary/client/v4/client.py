@@ -44,7 +44,6 @@ _logger = logging.getLogger(__name__)
 
 _schema_ignore = ["HC_user", "VOIP_user", "weather", 'iOS_device', '']
 
-
 class Client(object):
     """Home Center 2 Client Class.
     Provides interface to different resources managed by HC2
@@ -62,8 +61,9 @@ class Client(object):
             base_url=endpoint,
             username=username,
             password=password,
-            debug=True
+            debug=False
         )
+        self.client.set_header("Fibaro Header","X-Fibaro-Version:2")
 
         self.modified = {}
         self.modified_lock = threading.Lock()
@@ -184,6 +184,7 @@ class Client(object):
             # trick to reduce number of exceptions
             with self.modified_lock:
                 self.modified[property_name] = EventHook(property_name)
+            _logger.warning("Missing state handler for: {}".format(property_name))
 
     def _on_state_change(self, state):
         timestamp = state.get('timestamp', 0)
@@ -232,7 +233,7 @@ class StateHandler(threading.Thread):
         self.callback = callback
         self.daemon = True  # stop unconditionally on exit
 
-        self._stop = threading.Event("Stop")
+        self._stop = threading.Event()
 
         self.start()
 

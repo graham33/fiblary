@@ -38,7 +38,7 @@ class EventQueue(threading.Thread):
     def __init__(self, name=None):
         super(EventQueue, self).__init__(name=name or self.__class__.__name__)
         self.queue = queue.Queue()
-        self._stop = threading.Event("EventQueue Stop Event")
+        self._stop = threading.Event()
 
         self.n = 0
         self.serving = None
@@ -74,7 +74,7 @@ class EventQueue(threading.Thread):
             try:
                 event, function, a, kw = self.queue.get(True, 120)
             except queue.Empty:
-                _logger.warning("Event queue timeout: {}".format(self.name))
+#                _logger.warning("Event queue timeout: {}".format(self.name))
                 continue
 
             if event == "EXIT":
