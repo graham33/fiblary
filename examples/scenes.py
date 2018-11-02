@@ -18,7 +18,7 @@
 import logging
 import prettytable as pt
 
-from fiblary.client import Client
+from fiblary3.client import Client
 
 import time
 

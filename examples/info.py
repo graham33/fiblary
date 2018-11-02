@@ -17,7 +17,7 @@
 
 import logging
 
-from fiblary.client import Client
+from fiblary3.client import Client
 
 logging.basicConfig(
     format='%(asctime)-15s %(levelname)s: %(module)s:%(funcName)s'

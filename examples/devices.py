@@ -18,8 +18,8 @@
 import logging
 import time
 
-from fiblary.client import Client
-from fiblary.common import exceptions
+from fiblary3.client import Client
+from fiblary3.common import exceptions
 
 logging.basicConfig(
     format='%(asctime)-15s %(levelname)s: %(module)s:%(funcName)s'

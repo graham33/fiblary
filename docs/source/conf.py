@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'fiblary'
+project = u'fiblary3'
 copyright = u'2014, Klaudiusz Staniek'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -199,7 +199,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'fiblary.tex', u'fiblary Documentation',
+  ('index', 'fiblary3.tex', u'fiblary Documentation',
    u'Klaudiusz Staniek', 'manual'),
 ]
 
@@ -229,7 +229,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fiblary', u'fiblary Documentation',
+    ('index', 'fiblary3', u'fiblary Documentation',
      [u'Klaudiusz Staniek'], 1)
 ]
 
@@ -243,8 +243,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'fiblary', u'fiblary Documentation',
-   u'Klaudiusz Staniek', 'fiblary', 'One line description of project.',
+  ('index', 'fiblary3', u'fiblary Documentation',
+   u'Klaudiusz Staniek', 'fiblary3', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -264,7 +264,7 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'fiblary'
+epub_title = u'fiblary3'
 epub_author = u'Klaudiusz Staniek'
 epub_publisher = u'Klaudiusz Staniek'
 epub_copyright = u'2014, Klaudiusz Staniek'

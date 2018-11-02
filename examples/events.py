@@ -18,10 +18,10 @@
 import logging
 import prettytable as pt
 
-from fiblary.client import Client
+from fiblary3.client import Client
 
-from fiblary.common.timestamp import datetime_to_epoch
-from fiblary.common.timestamp import timestamp_to_iso
+from fiblary3.common.timestamp import datetime_to_epoch
+from fiblary3.common.timestamp import timestamp_to_iso
 
 import datetime as dt
 
