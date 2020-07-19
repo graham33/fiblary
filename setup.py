@@ -32,6 +32,7 @@ packages = [
     'fiblary3.client',
     'fiblary3.client.v3',
     'fiblary3.client.v4',
+    'fiblary3.client.v5',
     'fiblary3.common',
     'fiblary3.external',
 ]
@@ -45,7 +46,7 @@ with open('README.rst') as f:
 setup(
     name='fiblary3',
     version=fiblary3.__version__,
-    description='Home Center 2 API Python Library',
+    description='Home Center API Python Library',
     long_description=readme,
     author='Peter Balogh',
     author_email='peter.balogh2@gmail.com',
