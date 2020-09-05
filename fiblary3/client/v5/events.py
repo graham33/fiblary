@@ -1,3 +1,4 @@
+#  Copyright 2020 Daniel Pervan
 #  Copyright 2014 Klaudiusz Staniek
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,15 @@
 #   limitations under the License.
 
 """
-This is a fiblary package providing python API implementation to Home Center
+ fiblary.info
+ ~~~~~~~~~~~~~~
 
+ Home Center Info Manager Implementation
 """
 
+from fiblary3.client.v5 import base
 
-from fiblary3.common import utils
 
-
-def Client(version, *args, **kwargs):
-    """This is a client wrapper handling API versioning
-
-    :param version: A version string of the API (i.e. 'v3')
-    :returns: A Home Center Client class
-    """
-
-    module = utils.import_versioned_module('client', version, 'client')
-    client_class = getattr(module, 'Client')
-    return client_class(*args, **kwargs)
+class Controller(base.ReadOnlyController):
+    RESOURCE = 'panels/event'
+    API_PARAMS = ('last', 'from', 'to', 'type', 'deviceID')
