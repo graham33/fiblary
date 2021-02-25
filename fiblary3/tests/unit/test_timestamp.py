@@ -22,4 +22,4 @@ class TestUtils(testtools.TestCase):
     def test_timestamp_to_iso(self):
         self.assertEqual(
             timestamp.timestamp_to_iso(123123123),
-            "1973-11-26 01:52:03")
+            "1973-11-26 00:52:03")
