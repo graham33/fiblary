@@ -38,7 +38,7 @@ class EventQueue(threading.Thread):
     def __init__(self, name=None):
         super(EventQueue, self).__init__(name=name or self.__class__.__name__)
         self.queue = queue.Queue()
-        self._stop = threading.Event()
+        self._stopper = threading.Event()
 
         self.n = 0
         self.serving = None
@@ -63,7 +63,7 @@ class EventQueue(threading.Thread):
 
     def stop(self):
         _logger.info("Stopping the event queue for {}".format(self.name))
-        self._stop.set()
+        self._stopper.set()
         self.put("EXIT")
 
     def run(self):
@@ -89,7 +89,7 @@ class EventQueue(threading.Thread):
             self.n += 1
 
     def stopped(self):
-        return self._stop.isSet()
+        return self._stopper.isSet()
 
 
 def queue_event(f):
