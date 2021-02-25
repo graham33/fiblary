@@ -3,5 +3,5 @@ testrepository>=0.0.17
 coverage>=3.6
 discover
 fixtures>=0.3.14
-mock>=1.0
 testtools>=0.9.32
+requests-mock>=1.8.0
