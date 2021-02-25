@@ -89,7 +89,7 @@ class RESTApi(object):
             session = requests.Session()
         self.session = session
         self.session.verify = verify
-        self.session.user_agent = user_agent
+        self.session.headers['User-Agent'] = user_agent
         self.session.stream = False
 
         if logger:
